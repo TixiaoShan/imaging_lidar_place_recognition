@@ -2,6 +2,8 @@
 
 A place recognition package using high-resolution imaging lidar. For best performance, a lidar equipped with more than 64 uniformly distributed channels is strongly recommended, i.e., [Ouster OS1-128 lidar](https://ouster.com/products/os1-lidar-sensor/).
 
+---
+
 ## Dependency
 
 - [ROS](http://wiki.ros.org/ROS/Installation)
@@ -15,6 +17,8 @@ A place recognition package using high-resolution imaging lidar. For best perfor
   sudo make install
   ```
 
+---
+
 ## Install Package
 
 Use the following commands to download and compile the package.
@@ -25,6 +29,8 @@ git clone https://github.com/TixiaoShan/imaging_lidar_place_recognition.git
 cd ..
 catkin_make
 ```
+
+---
 
 ## Notes
 
@@ -48,6 +54,8 @@ In the current implementation, the package subscribes to a path message that is 
 
 It's recommended to set the ```image_crop``` parameter in ```params.yaml``` to be 196-256 when testing the indoor and handheld datasets. This is because the operator is right behind the lidar during the data-gathering process. Using features extracted from the operator body may cause unreliable matching. This parameter should be set to 0 when testing the Jackal dataset, which improves the reverse visiting detection performance.
 
+---
+
 ## Test Package
 
 1. Run the launch file:
@@ -60,11 +68,13 @@ roslaunch imaging_lidar_place_recognition run.launch
 rosbag play indoor_registered.bag -r 3
 ```
 
+---
+
 ## Paper 
 
 Thank you for citing our [paper](./doc/paper.pdf) if you use any of this code or datasets. 
 ```
-@inproceedings{robust2020shan,
+@inproceedings{robust2021shan,
   title={Robust Place Recognition using an Imaging Lidar},
   author={Shan, Tixiao and Englot, Brendan and Duarte, Fabio and Ratti, Carlo and Rus Daniela},
   booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
@@ -73,6 +83,8 @@ Thank you for citing our [paper](./doc/paper.pdf) if you use any of this code or
   organization={IEEE}
 }
 ```
+
+---
 
 ## Acknowledgement
 

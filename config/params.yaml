@@ -1,0 +1,40 @@
+%YAML:1.0
+
+# Project
+project_name: "imaging_lidar_place_recognition"
+
+# Enable flag
+loop_closure: 1
+
+# Cloud parameters
+cloud_topic: "points_raw"       # point cloud input topic
+image_width: 1024               # image horitontal resolution
+image_height: 128               # image vertical resolution
+image_crop: 256                 # mask for blocking feature extraction; indoor/handheld=196-256; jackal=0 
+
+# Registered path
+path_topic: "lio_sam/mapping/path"
+
+# Feature matching
+use_brief: 1                    # enabling flag for BRIEF feature 
+use_orb: 1                      # enabling flag for ORB feature 
+num_bri_features: 200           # feature num for BRIEF
+num_orb_features: 500           # feature num for ORB
+
+# Loop settings
+min_loop_feature_num: 15        # minimum feature number threshold
+min_loop_search_gap: 50         # search keyframes older than x frames
+min_loop_search_time: 30        # search keyframes older than x seconds
+min_loop_bow_th: 0.015          # BOW search threshold
+
+# CPU
+skip_time: 0.15                 # point cloud processing time interval
+num_threads: 4                  # CPU thread number
+
+# Visualization
+debug_image: 0                  # debug flag (warning: uses massive memory)
+match_image_scale: 1.0          # debug image display size
+
+# Vocab file
+vocabulary_file: "/config/orbvoc.dbow3"
+brief_pattern_file: "/config/brief_pattern.yml"

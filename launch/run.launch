@@ -1,0 +1,22 @@
+<launch>
+
+    <arg name="project" default="imaging_lidar_place_recognition"/>
+    
+    <!--- Param file-->
+    <param name="lio_loop_config_file" type="string" value="$(find imaging_lidar_place_recognition)/config/params.yaml" />
+
+    <!--- Node-->
+    <node pkg="$(arg project)"  
+          type="$(arg project)_main"
+          name="$(arg project)_main"
+          output="screen"
+          />
+
+    <!--- Run Rviz-->
+    <node pkg="rviz" 
+          type="rviz" 
+          name="$(arg project)_rviz" 
+          args="-d $(find imaging_lidar_place_recognition)/launch/rviz.rviz" 
+          />
+
+</launch>

@@ -28,23 +28,23 @@ catkin_make
 
 ## Notes
 
-# Download
+### Download
 
 The three datasets used in the paper can be downloaded from from [Google Drive](https://drive.google.com/drive/folders/1G1kE8oYGKj7EMdjx7muGucXkt78cfKKU?usp=sharing). The lidar used for data-gathering is Ouster OS1-128.
 ```
 https://drive.google.com/drive/folders/1G1kE8oYGKj7EMdjx7muGucXkt78cfKKU?usp=sharing
 ```
 
-# Point Cloud Format
+### Point Cloud Format
 
 The author defined a customized point cloud format, PointOuster, in ```parameters.h```. The customized point cloud is projected onto various images in ```image_handler.h```. If you are using your own dataset, please modify these two files to accommodate data format changes.
 
 
-# Visualization logic
+### Visualization logic
 
 In the current implementation, the package subscribes to a path message that is published by a SLAM framework, i.e., LIO-SAM. When a new point cloud arrives, the package associates the point cloud with the latest pose in the path. If a match is detected between two point clouds, an edge marker is plotted between these two poses. The reason why it's implemented in this way is that SLAM methods usually suffer from drift. If a loop-closure is performed, the associated pose of a point cloud also needs to be updated. Thus, this visualization logic can update point clouds using the updated path rather than using TF or odometry that cannot be updated later.
 
-# Image Crop
+### Image Crop
 
 It's recommended to set the ```image_crop``` parameter in ```params.yaml``` to be 196-256 when testing the indoor and handheld datasets. This is because the operator is right behind the lidar during the data-gathering process. Using features extracted from the operator body may cause unreliable matching. This parameter should be set to 0 when testing the Jackal dataset, which improves the reverse visiting detection performance.
 

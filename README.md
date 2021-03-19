@@ -2,6 +2,10 @@
 
 A place recognition package using high-resolution imaging lidar. For best performance, a lidar equipped with more than 64 uniformly distributed channels is strongly recommended, i.e., [Ouster OS1-128 lidar](https://ouster.com/products/os1-lidar-sensor/).
 
+<p align='center'>
+    <img src="./doc/demo.gif" alt="drawing" width="800"/>
+</p>
+
 ---
 
 ## Dependency

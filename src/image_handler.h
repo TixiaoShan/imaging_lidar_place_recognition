@@ -29,6 +29,7 @@ public:
         pcl::fromROSMsg(*cloud_msg, *laser_cloud);
 
         assert((int)laser_cloud->size() % IMAGE_HEIGHT * IMAGE_WIDTH == 0);
+        assert((int)laser_cloud->size() >= IMAGE_HEIGHT * IMAGE_WIDTH);
 
         // reset images
         image_range = cv::Mat(IMAGE_HEIGHT, IMAGE_WIDTH, CV_8UC1, cv::Scalar(0));

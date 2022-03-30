@@ -82,7 +82,7 @@ Thank you for citing our [paper](./doc/paper.pdf) if you use any of this code or
   title={Robust Place Recognition using an Imaging Lidar},
   author={Shan, Tixiao and Englot, Brendan and Duarte, Fabio and Ratti, Carlo and Rus Daniela},
   booktitle={IEEE International Conference on Robotics and Automation (ICRA)},
-  pages={to-be-added},
+  pages={5469-5475},
   year={2021},
   organization={IEEE}
 }

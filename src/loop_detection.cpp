@@ -73,14 +73,14 @@ int LoopDetector::detectLoop(KeyFrame* keyframe, int frame_index)
         cv::Mat bow_images = keyframe->image.clone();
 
         if (ret.size() > 0)
-            putText(bow_images, "Index: " + to_string(frame_index), cv::Point2f(10, 50), CV_FONT_HERSHEY_SIMPLEX, 1.0, cv::Scalar(255), 2);
+            putText(bow_images, "Index: " + to_string(frame_index), cv::Point2f(10, 50), cv::FONT_HERSHEY_SIMPLEX, 1.0, cv::Scalar(255), 2);
 
         for (unsigned int i = 0; i < ret.size(); i++)
         {
             int tmp_index = ret[i].Id;
             auto it = image_pool.find(tmp_index);
             cv::Mat tmp_image = (it->second).clone();
-            putText(tmp_image, "Index:  " + to_string(tmp_index) + ", BoW score:" + to_string(ret[i].Score), cv::Point2f(10, 50), CV_FONT_HERSHEY_SIMPLEX, 1.0, cv::Scalar(255), 2);
+            putText(tmp_image, "Index:  " + to_string(tmp_index) + ", BoW score:" + to_string(ret[i].Score), cv::Point2f(10, 50), cv::FONT_HERSHEY_SIMPLEX, 1.0, cv::Scalar(255), 2);
             cv::vconcat(bow_images, tmp_image, bow_images);
         }
 

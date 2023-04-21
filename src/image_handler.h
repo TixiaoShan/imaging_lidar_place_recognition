@@ -85,9 +85,9 @@ public:
             cv::vconcat(image_noise, image_intensity, image_visualization);
             cv::vconcat(image_visualization, image_range, image_visualization);
             cv::cvtColor(image_visualization, image_visualization, CV_GRAY2RGB);
-            cv::putText(image_visualization, "Ambient",   cv::Point2f(5, 20 + IMAGE_HEIGHT*0), CV_FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
-            cv::putText(image_visualization, "Intensity", cv::Point2f(5, 20 + IMAGE_HEIGHT*1), CV_FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
-            cv::putText(image_visualization, "Range",     cv::Point2f(5, 20 + IMAGE_HEIGHT*2), CV_FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
+            cv::putText(image_visualization, "Ambient",   cv::Point2f(5, 20 + IMAGE_HEIGHT*0), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
+            cv::putText(image_visualization, "Intensity", cv::Point2f(5, 20 + IMAGE_HEIGHT*1), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
+            cv::putText(image_visualization, "Range",     cv::Point2f(5, 20 + IMAGE_HEIGHT*2), cv::FONT_HERSHEY_SIMPLEX, 0.8, cv::Scalar(255,0,255), 2);
             pubImage(&pub_image, image_visualization, cloud_msg->header, "bgr8");
         }
 

@@ -332,7 +332,7 @@ void KeyFrame::PnPRANSAC(const vector<cv::Point2f> &matched_2d_old_norm,
     cv::Mat r, rvec, tvec, D, inliers;
     cv::Mat K = (cv::Mat_<double>(3, 3) << 1.0, 0, 0, 0, 1.0, 0, 0, 0, 1.0);
 
-    solvePnPRansac(matched_3d, matched_2d_old_norm, K, D, rvec, tvec, false, 100, 0.025, 0.99, inliers);
+    solvePnPRansac(matched_3d, matched_2d_old_norm, K, D, rvec, tvec, false, 100, 0.025, 0.99, inliers, cv::SolvePnPMethod::SOLVEPNP_EPNP);
 
     status.resize(matched_2d_old_norm.size(), 0);
     for( int i = 0; i < inliers.rows; i++)
